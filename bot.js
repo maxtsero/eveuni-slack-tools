@@ -61,7 +61,7 @@ const controller = new Botkit({
 
     adapter: adapter,
 
-    storage
+    storage: storage
 });
 
 if (process.env.cms_uri) {
