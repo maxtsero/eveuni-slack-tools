@@ -16,6 +16,7 @@
     "botkit": "^4.6.0",
     "botkit-plugin-cms": "^1.0.3",
     "dotenv": "^8.2.0",
+    "esijs": "git+https://github.com/maxtsero/esiJS.git#patch-1",
     "mongoose": "^5.7.12"
   },
   "devDependencies": {},
