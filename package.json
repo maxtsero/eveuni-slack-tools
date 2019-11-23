@@ -1,17 +1,38 @@
 {
   "name": "eveuni-slack-tools",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "A slack bot providing EVE University with slack tools.",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
-    "botbuilder-adapter-slack": "^1.0.4",
+    "botbuilder-adapter-slack": "^1.0.6",
     "botbuilder-storage-mongodb": "^0.9.5",
-    "botkit": "^4.5.0",
-    "botkit-plugin-cms": "^1.0.2",
-    "dotenv": "^7.0.0"
-  }
+    "botkit": "^4.6.0",
+    "botkit-plugin-cms": "^1.0.3",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.7.12"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxtsero/eveuni-slack-tools.git"
+  },
+  "keywords": [
+    "botkit",
+    "slack",
+    "EVE",
+    "Online"
+  ],
+  "author": "Max Tsero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxtsero/eveuni-slack-tools/issues"
+  },
+  "homepage": "https://github.com/maxtsero/eveuni-slack-tools#readme"
 }
