@@ -135,7 +135,8 @@ module.exports = function(controller) {
     controller.on('block_actions', async (bot, message) => {
         await bot.reply(message, `Sounds like your choice is ${ message.incoming_message.channelData.actions[0].value }`)
     });
-
+    
+    /*
     controller.on('slash_command', async(bot, message) => {
         if (message.text === 'plain') {
             await bot.reply(message, 'This is a plain reply');
@@ -144,11 +145,10 @@ module.exports = function(controller) {
         } else if (message.text === 'private') {
             await bot.replyPrivate(message, 'This is a private reply');
         }
-
         // set http status
         bot.httpBody({text:'You can send an immediate response using bot.httpBody()'});
-
     });
+    */
 
     controller.on('interactive_message', async (bot, message) => {
 
