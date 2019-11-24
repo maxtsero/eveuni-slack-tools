@@ -5,17 +5,20 @@
 const esiJS = require('esijs');
 
 async function doESISearch(searchTerm, searchEndpoint, searchType) {
+    let strict;
     switch (searchType) {
         case "fuzzy":
-            var searchType = false;
+            strict = false;
             break;
         
         case "strict":
-            var searchType = true;
+            strict = true;
             break;
-        
+        default:
+            strict = true
+            break;
     }
-    let searchResult = await esiJS.search.search(searchTerm, searchEndpoint, searchType);
+    let searchResult = await esiJS.search.search(searchTerm, searchEndpoint, strict);
     console.log("Search Result", searchResult);
     return searchResult;
 };
@@ -43,13 +46,14 @@ module.exports = {
     },
     getRoutePlan (origin, destination, flag, avoids) {
         return new Promise((resolve, reject) => {
+            let routePlan;
             if (!avoids) {
-                var routePlan = esiJS.routes.planRoute(origin, destination, flag)
+                routePlan = esiJS.routes.planRoute(origin, destination, flag)
                     .catch(function(e) {
                         reject(e);
                     });
             } else {
-                var routePlan = esiJS.routes.planRoute(originID, destinationID, flag)
+                routePlan = esiJS.routes.planRoute(origin, destination, flag, avoids)
                     .catch(function(e) {
                         reject(e);
                     });
